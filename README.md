@@ -9,8 +9,7 @@ a 4 over a 0 are you?
 
 ## Installing
 
-This will probably go in the Chrome web store at some point, but for now, you can just [download the .crx file](https://github.com/pezholio/just-check/blob/master/just-check.crx?raw=true) and add it to 
-Chrome.
+Just visit the plugin on the [Chrome web store](https://chrome.google.com/webstore/detail/just-check/gmjbhhnhbfdnkpgjedfopcljmmccakag) and install!
 
 ## Contributing
 
