@@ -1,0 +1,22 @@
+{
+    "manifest_version": 2,
+    "name": "Just Check",
+    "description": "Displays food safety inspection scores against take-aways on just-eat.co.uk",
+    "version": "1.0",
+    "permissions": ["http://ratings.food.gov.uk/*"],
+    "content_scripts": [
+        {
+            "matches": [
+                "*://*.just-eat.co.uk/area/*"
+            ],
+            "run_at": "document_end",
+            "css": [
+                "justeat.css"
+            ],
+            "js": [
+                "jquery.js",
+                "justeat.js"
+            ]
+        }
+    ]
+}

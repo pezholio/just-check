@@ -1,0 +1,13 @@
+#ClosedRestaurants .fsarating {
+  float: right;
+  clear: both;
+  margin-top: 35px !important;
+  margin-right: 25px !important;
+}
+
+#OpenRestaurants .fsarating {
+  float: right;
+  clear: both;
+  margin-top: 0 !important;
+  margin-right: 35px !important;
+}
