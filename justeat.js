@@ -10,12 +10,11 @@ $("#SearchResults article").each(function() {
 
   $.getJSON(url, function(data) {
     var rating = data.FHRSEstablishment.EstablishmentCollection.EstablishmentDetail.RatingValue;
-    if (rating == "AwaitingInspection") {
-      img = "http://ratings.food.gov.uk/images/scores/small/fhrs_awaitinginspection_en-GB.JPG"
-    } else {
-      img = "http://www.food.gov.uk/images/document/fhrsrating"+ rating +".gif"
-    }      
-    $(cur).find(".rating").after("<img src='"+ img +"' class='fsarating' />")
+    var ratingKey= data.FHRSEstablishment.EstablishmentCollection.EstablishmentDetail.RatingKey.toLowerCase();
+    var img= "images/" + ratingKey + ".jpg";
+    
+    var imgURL= chrome.extension.getURL(img);
+    $(cur).find(".rating").after("<img src='"+ imgURL +"' class='fsarating' title='" + rating + "' alt='" + rating + "'/>")
   });
 
 });
