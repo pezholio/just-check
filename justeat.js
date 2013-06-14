@@ -30,20 +30,21 @@ else if (source.indexOf("hungryhouse") != -1)
     var name= $(this).find(".restsMainInfo h3 a").text().trim();
     var address= $(this).find(".restsMap div:first-child").text().trim();
     var postcode= getPostcodeFromAddress(address);
-    var curentItem= $(this);
-    //console.log("currentItem is: " + currentItem);
+    var currentItem= $(this);
+    //console.log("currentItem is: " + JSON.stringify(currentItem));
     
     // now search for the restaurant on the FSA website
     var search_url= "http://ratings.food.gov.uk/search/" + name + "/" + postcode + "/json";
-    /*
+    
     $.ajax({
       url: search_url,
       dataType: "json",
       insertAfter: "a.buttonsOld",
+      takeawayBox: $(this),
       success: processRatings
     });
-    */
     
+    /*
     $.getJSON(search_url, function(data) {
       // don't try to do anything if we don't have any results
       if (data.FHRSEstablishment.Header.ItemCount > 0)
@@ -56,7 +57,7 @@ else if (source.indexOf("hungryhouse") != -1)
         $(curentItem).find("a.buttonsOld").after("<img src='"+ imgURL +"' class='fsarating' title='" + rating + "' alt='" + rating + "'/>")
       } // end if result found
     });
-    
+         */
   }); 
 } // end if this is Hungry House
 
@@ -71,7 +72,8 @@ function processRatings(data)
     var img= "images/" + ratingKey + ".jpg";
     
     var imgURL= chrome.extension.getURL(img);
-    $(currentItem).find(this.insertAfter).after("<img src='"+ imgURL +"' class='fsarating' title='" + rating + "' alt='" + rating + "'/>")
+    
+    $(this.takeawayBox).find(this.insertAfter).after("<img src='"+ imgURL +"' class='fsarating' title='" + rating + "' alt='" + rating + "'/>")
   } // end if result found
 
 } // end function processRatings()
