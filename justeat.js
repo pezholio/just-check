@@ -42,6 +42,9 @@ if (source.indexOf("just-eat") != -1)
 // Hungry House detected
 else if (source.indexOf("hungryhouse") != -1)
 {
+  // Force expanded mode so we can see the scores
+  $('.homepagePostCodeForm form').append('<input name="view[name]" value="expanded" type="hidden" />')
+  
   $("#restsSearchResultsList .restsSearchItemRes").each(function() {
     var name= $(this).find(".restsMainInfo h3 a").text().trim();
     var address= $(this).find(".restsMap div:first-child").text().trim();
