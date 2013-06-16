@@ -1,13 +1,14 @@
 {
     "manifest_version": 2,
     "name": "Just Check",
-    "description": "Displays food safety inspection scores against take-aways on just-eat.co.uk",
-    "version": "1.1",
+    "description": "Displays food safety inspection scores against take-aways on just-eat.co.uk and hungryhouse.co.uk",
+    "version": "1.2",
     "permissions": ["http://ratings.food.gov.uk/*"],
     "content_scripts": [
         {
             "matches": [
-                "*://*.just-eat.co.uk/area/*"
+                "*://*.just-eat.co.uk/area/*",
+                "*://*.hungryhouse.co.uk/restaurants/*"
             ],
             "run_at": "document_end",
             "css": [
@@ -15,6 +16,7 @@
             ],
             "js": [
                 "jquery.js",
+                "utils.js",
                 "justeat.js"
             ]
         }
