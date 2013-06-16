@@ -4,7 +4,7 @@ We all like take-aways, and they're even better when they're delivered to our do
 and some may have quite shocking standards of hygiene.
 
 This plug in hopes to make picking the ideal take-away even easier by displaying the result of the food safety inspection score
-against each take-away on [just-eat.co.uk](http://www.just-eat.co.uk), making choosing what take-away to use even easier. I mean, you're not going to choose 
+against each take-away on [just-eat.co.uk](http://www.just-eat.co.uk) and [hungry-house.co.uk](http://www.hungry-house.co.uk), making choosing what take-away to use even easier. I mean, you're not going to choose 
 a 4 over a 0 are you?
 
 ## Installing
