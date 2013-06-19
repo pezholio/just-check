@@ -8,7 +8,8 @@
         {
             "matches": [
                 "*://*.just-eat.co.uk/area/*",
-                "*://*.hungryhouse.co.uk/*"
+                "*://*.hungryhouse.co.uk/*",
+                "*://*.fillmybelly.com/*"
             ],
             "run_at": "document_end",
             "css": [
