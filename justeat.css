@@ -19,3 +19,19 @@
 .restsSearchItemRes .fsarating {
   margin: 10px 0 15px 18px;
 }
+
+/* Styles for Fill My Belly */
+
+.search-product .fsarating {
+  right: 25px;
+  position: absolute;
+  bottom: 20px;
+}
+
+.search-product {
+  height: 140px;
+}
+
+.SponserClass .search-product {
+  height: 160px; 
+}

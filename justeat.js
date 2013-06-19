@@ -68,3 +68,32 @@ else if (source.indexOf("hungryhouse") != -1)
     } // end if a postcode was found
   }); 
 } // end if this is Hungry House
+
+// Fill My Belly detected
+else if (source.indexOf("fillmybelly") != -1) {
+  
+  $(".search-product").each(function() {
+    var name= $(this).find(".searchlogo-heading span:first").text().trim();
+    var address= $(this).find("img.displayblock").attr('alt').trim();
+    var postcode= getPostcodeFromAddress(address);
+    
+    console.log(name)
+    
+    // only search if we found a postcode
+    if (postcode)
+    {
+      // now search for the restaurant on the FSA website
+      var search_url= "http://ratings.food.gov.uk/search/" + name + "/" + postcode + "/json";
+    
+      // make the call to the web service, sending some additional parameters to the callback
+      // (success) function [insertAfter, takeawayBox]
+      $.ajax({
+        url: search_url,
+        dataType: "json",
+        insertAfter: ".searchlogo",
+        takeawayBox: $(this),
+        success: processRatings
+      });
+    } // end if a postcode was found
+  });
+}
