@@ -2,7 +2,7 @@
     "manifest_version": 2,
     "name": "Just Check",
     "description": "Displays food safety inspection scores against take-aways on just-eat.co.uk and hungryhouse.co.uk",
-    "version": "1.2",
+    "version": "1.3",
     "permissions": ["http://ratings.food.gov.uk/*"],
     "content_scripts": [
         {
