@@ -16,7 +16,7 @@
  */ 
 function getPostcodeFromAddress(address)
 {
-  var postcodeMatches= address.match(/[A-Z]{1,2}[0-9]{1,2} ?[0-9][A-Z]{2}/i);
+  var postcodeMatches= address.match(/[A-Z]{1,2}[0-9]{1,2} ?[0-9][A-Z]{2}|[A-Z]{1,2}[0-9]{1,2}/i);
   var postcode= null;
   if (postcodeMatches != null) {
     return postcodeMatches[0];
