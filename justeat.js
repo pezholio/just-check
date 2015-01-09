@@ -76,9 +76,7 @@ else if (source.indexOf("fillmybelly") != -1) {
     var name= $(this).find(".searchlogo-heading span:first").text().trim();
     var address= $(this).find("img.displayblock").attr('alt').trim();
     var postcode= getPostcodeFromAddress(address);
-    
-    console.log(name)
-    
+
     // only search if we found a postcode
     if (postcode)
     {
