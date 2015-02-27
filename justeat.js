@@ -16,9 +16,9 @@ var source= document.URL.toLowerCase();
 // Just-Eat detected
 if (source.indexOf("just-eat") != -1)
 {
-  $("#SearchResults article").each(function() {
-    name = $(this).find(".restaurantDetails h3").text().trim()
-    address = $(this).find("address").text().trim()
+  $(".restaurants .restaurant").each(function() {
+    name = $(this).find(".title h2 a").text()
+    address = $(this).find(".address").text().trim()
     postcode = getPostcodeFromAddress(address);
 
     if (postcode)
@@ -31,7 +31,7 @@ if (source.indexOf("just-eat") != -1)
       $.ajax({
         url: search_url,
         dataType: "json",
-        insertAfter: ".rating",
+        insertAfter: ".address",
         takeawayBox: $(this),
         success: processRatings
       });
